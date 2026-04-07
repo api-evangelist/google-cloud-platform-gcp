@@ -1,11 +1,8 @@
 aid: google-cloud-platform-gcp
 name: Google Cloud Platform
-description: Google Cloud Platform provides a comprehensive suite of cloud 
-  computing services including compute, storage, databases, machine learning, 
-  networking, and more.
+description: Google Cloud Platform provides a comprehensive suite of cloud computing services including compute, storage, databases, machine learning, networking, and more.
 url: https://cloud.google.com
-image: 
-  https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png
+image: https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png
 created: '2024-01-15'
 modified: '2026-03-16'
 specificationVersion: '0.19'
@@ -18,9 +15,9 @@ apis:
     humanUrl: https://cloud.google.com/compute
     baseUrl: https://compute.googleapis.com/compute/v1
     tags:
-      - Virtual Machines
-      - IaaS
       - Compute
+      - IaaS
+      - Virtual Machines
     properties:
       - type: Documentation
         url: https://cloud.google.com/compute/docs/reference/rest/v1
@@ -37,9 +34,9 @@ apis:
     humanUrl: https://cloud.google.com/storage
     baseUrl: https://storage.googleapis.com/storage/v1
     tags:
-      - Storage
-      - Object Storage
       - Blob Storage
+      - Object Storage
+      - Storage
     properties:
       - type: Documentation
         url: https://cloud.google.com/storage/docs/json_api
@@ -56,9 +53,9 @@ apis:
     humanUrl: https://cloud.google.com/bigquery
     baseUrl: https://bigquery.googleapis.com/bigquery/v2
     tags:
-      - Data Warehouse
       - Analytics
       - Big Data
+      - Data Warehouse
     properties:
       - type: Documentation
         url: https://cloud.google.com/bigquery/docs/reference/rest
@@ -75,9 +72,9 @@ apis:
     humanUrl: https://cloud.google.com/functions
     baseUrl: https://cloudfunctions.googleapis.com/v2
     tags:
-      - Serverless
-      - Functions
       - FaaS
+      - Functions
+      - Serverless
     properties:
       - type: Documentation
         url: https://cloud.google.com/functions/docs/reference/rest
@@ -94,8 +91,8 @@ apis:
     humanUrl: https://cloud.google.com/kubernetes-engine
     baseUrl: https://container.googleapis.com/v1
     tags:
-      - Kubernetes
       - Containers
+      - Kubernetes
       - Orchestration
     properties:
       - type: Documentation
@@ -113,8 +110,8 @@ apis:
     humanUrl: https://cloud.google.com/pubsub
     baseUrl: https://pubsub.googleapis.com/v1
     tags:
-      - Messaging
       - Event Streaming
+      - Messaging
       - Pub/Sub
     properties:
       - type: Documentation
@@ -132,9 +129,9 @@ apis:
     humanUrl: https://cloud.google.com/vision
     baseUrl: https://vision.googleapis.com/v1
     tags:
-      - Machine Learning
-      - Computer Vision
       - AI
+      - Computer Vision
+      - Machine Learning
     properties:
       - type: Documentation
         url: https://cloud.google.com/vision/docs/reference/rest
@@ -152,8 +149,8 @@ apis:
     baseUrl: https://sqladmin.googleapis.com/v1
     tags:
       - Database
-      - SQL
       - Managed Service
+      - SQL
     properties:
       - type: Documentation
         url: https://cloud.google.com/sql/docs/mysql/admin-api
@@ -170,9 +167,9 @@ apis:
     humanUrl: https://cloud.google.com/run
     baseUrl: https://run.googleapis.com/v2
     tags:
-      - Serverless
-      - Containers
       - Cloud Native
+      - Containers
+      - Serverless
     properties:
       - type: Documentation
         url: https://cloud.google.com/run/docs/reference/rest
@@ -189,8 +186,8 @@ apis:
     humanUrl: https://cloud.google.com/vertex-ai
     baseUrl: https://aiplatform.googleapis.com/v1
     tags:
-      - Machine Learning
       - AI
+      - Machine Learning
       - MLOps
     properties:
       - type: Documentation
@@ -223,9 +220,9 @@ maintainers:
     email: kin@apievangelist.com
 tags:
   - Cloud Computing
+  - Data Analytics
   - IaaS
+  - Machine Learning
   - PaaS
   - SaaS
-  - Machine Learning
-  - Data Analytics
   - Serverless
