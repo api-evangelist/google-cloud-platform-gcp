@@ -215,6 +215,10 @@ common:
     url: https://console.cloud.google.com
   - type: Pricing Calculator
     url: https://cloud.google.com/products/calculator
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
+integrations:
+  - name: Become a Partner
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
