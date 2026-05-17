@@ -201,15 +201,15 @@ common:
     url: https://cloud.google.com/docs/authentication
   - type: SDKs
     url: https://cloud.google.com/apis/docs/client-libraries
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com
   - type: Support
     url: https://cloud.google.com/support
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://cloud.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://cloud.google.com/privacy
-  - type: Getting Started
+  - type: GettingStarted
     url: https://cloud.google.com/docs
   - type: Console
     url: https://console.cloud.google.com
