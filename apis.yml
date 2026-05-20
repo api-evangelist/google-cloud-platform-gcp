@@ -197,6 +197,10 @@ apis:
       - type: Console
         url: https://console.cloud.google.com/vertex-ai
 common:
+  - type: GitHubOrganization
+    url: https://github.com/GoogleCloudPlatform
+  - type: LinkedIn
+    url: https://www.linkedin.com/showcase/google-cloud
   - type: Authentication
     url: https://cloud.google.com/docs/authentication
   - type: SDKs
