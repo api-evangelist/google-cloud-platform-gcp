@@ -1,0 +1,311 @@
+openapi: 3.1.0
+info:
+  title: Google Compute Engine API
+  description: |
+    Google Compute Engine is Google Cloud Platform's IaaS service for creating
+    and managing virtual machines on Google's infrastructure. The REST API
+    exposes instances, disks, networks, firewalls, and machine types organized
+    by projects, regions, and zones.
+  version: v1
+servers:
+  - url: https://compute.googleapis.com/compute/v1
+security:
+  - OAuth2: [cloud-platform]
+  - OAuth2: [compute]
+paths:
+  /projects/{project}/zones/{zone}/instances:
+    get:
+      summary: List instances
+      operationId: listInstances
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: filter
+          in: query
+          schema:
+            type: string
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of instances
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstanceList'
+    post:
+      summary: Create instance
+      operationId: insertInstance
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Instance'
+      responses:
+        '200':
+          description: Long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{project}/zones/{zone}/instances/{instance}:
+    get:
+      summary: Get instance
+      operationId: getInstance
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instance
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Instance details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Instance'
+    delete:
+      summary: Delete instance
+      operationId: deleteInstance
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instance
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{project}/zones/{zone}/disks:
+    get:
+      summary: List disks
+      operationId: listDisks
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of disks
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      summary: Create disk
+      operationId: insertDisk
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{project}/global/networks:
+    get:
+      summary: List networks
+      operationId: listNetworks
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of networks
+          content:
+            application/json:
+              schema:
+                type: object
+  /projects/{project}/global/firewalls:
+    get:
+      summary: List firewall rules
+      operationId: listFirewalls
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of firewall rules
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      summary: Create firewall rule
+      operationId: insertFirewall
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{project}/zones/{zone}/machineTypes:
+    get:
+      summary: List machine types
+      operationId: listMachineTypes
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of machine types
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/v2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            cloud-platform: View and manage your data across Google Cloud Platform services
+            compute: View and manage your Google Compute Engine resources
+  schemas:
+    Instance:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        machineType:
+          type: string
+        status:
+          type: string
+        zone:
+          type: string
+        networkInterfaces:
+          type: array
+          items:
+            type: object
+        disks:
+          type: array
+          items:
+            type: object
+    InstanceList:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Instance'
+        nextPageToken:
+          type: string
+    Operation:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        operationType:
+          type: string
+        status:
+          type: string
+        targetLink:
+          type: string
