@@ -197,6 +197,10 @@ apis:
       - type: Console
         url: https://console.cloud.google.com/vertex-ai
 common:
+  - type: DomainSecurity
+    url: security/google-cloud-platform-gcp-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-platform-gcp-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-platform-gcp-scopes.yml
   - type: GitHubOrganization
