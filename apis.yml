@@ -197,6 +197,8 @@ apis:
       - type: Console
         url: https://console.cloud.google.com/vertex-ai
 common:
+  - type: OAuthScopes
+    url: scopes/google-cloud-platform-gcp-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
   - type: LinkedIn
