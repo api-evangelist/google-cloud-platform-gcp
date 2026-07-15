@@ -197,6 +197,8 @@ apis:
       - type: Console
         url: https://console.cloud.google.com/vertex-ai
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-cloud-platform-gcp-agentic-access.yml
   - type: DomainSecurity
     url: security/google-cloud-platform-gcp-domain-security.yml
   - type: Authentication
