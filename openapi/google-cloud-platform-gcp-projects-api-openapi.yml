@@ -1,45 +1,53 @@
 openapi: 3.1.0
 info:
-  title: Google Compute Engine API
-  description: |
-    Google Compute Engine is Google Cloud Platform's IaaS service for creating
-    and managing virtual machines on Google's infrastructure. The REST API
+  title: Google Compute Engine Projects API
+  description: 'Google Compute Engine is Google Cloud Platform''s IaaS service for creating
+
+    and managing virtual machines on Google''s infrastructure. The REST API
+
     exposes instances, disks, networks, firewalls, and machine types organized
+
     by projects, regions, and zones.
+
+    '
   version: v1
 servers:
-  - url: https://compute.googleapis.com/compute/v1
+- url: https://compute.googleapis.com/compute/v1
 security:
-  - OAuth2: [cloud-platform]
-  - OAuth2: [compute]
+- OAuth2:
+  - cloud-platform
+- OAuth2:
+  - compute
+tags:
+- name: Projects
 paths:
   /projects/{project}/zones/{zone}/instances:
     get:
       summary: List instances
       operationId: listInstances
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: zone
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: filter
-          in: query
-          schema:
-            type: string
-        - name: maxResults
-          in: query
-          schema:
-            type: integer
-        - name: pageToken
-          in: query
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: zone
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
       responses:
         '200':
           description: List of instances
@@ -47,20 +55,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InstanceList'
+      tags:
+      - Projects
     post:
       summary: Create instance
       operationId: insertInstance
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: zone
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: zone
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -74,26 +84,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+      - Projects
   /projects/{project}/zones/{zone}/instances/{instance}:
     get:
       summary: Get instance
       operationId: getInstance
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: zone
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: instance
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: zone
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: instance
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Instance details
@@ -101,25 +113,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Instance'
+      tags:
+      - Projects
     delete:
       summary: Delete instance
       operationId: deleteInstance
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: zone
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: instance
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: zone
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: instance
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Long-running operation
@@ -127,21 +141,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+      - Projects
   /projects/{project}/zones/{zone}/disks:
     get:
       summary: List disks
       operationId: listDisks
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: zone
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: zone
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: List of disks
@@ -149,20 +165,22 @@ paths:
             application/json:
               schema:
                 type: object
+      tags:
+      - Projects
     post:
       summary: Create disk
       operationId: insertDisk
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: zone
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: zone
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -176,16 +194,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+      - Projects
   /projects/{project}/global/networks:
     get:
       summary: List networks
       operationId: listNetworks
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: List of networks
@@ -193,16 +213,18 @@ paths:
             application/json:
               schema:
                 type: object
+      tags:
+      - Projects
   /projects/{project}/global/firewalls:
     get:
       summary: List firewall rules
       operationId: listFirewalls
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: List of firewall rules
@@ -210,15 +232,17 @@ paths:
             application/json:
               schema:
                 type: object
+      tags:
+      - Projects
     post:
       summary: Create firewall rule
       operationId: insertFirewall
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -232,21 +256,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+      - Projects
   /projects/{project}/zones/{zone}/machineTypes:
     get:
       summary: List machine types
       operationId: listMachineTypes
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: zone
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: zone
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: List of machine types
@@ -254,17 +280,9 @@ paths:
             application/json:
               schema:
                 type: object
+      tags:
+      - Projects
 components:
-  securitySchemes:
-    OAuth2:
-      type: oauth2
-      flows:
-        authorizationCode:
-          authorizationUrl: https://accounts.google.com/o/oauth2/v2/auth
-          tokenUrl: https://oauth2.googleapis.com/token
-          scopes:
-            cloud-platform: View and manage your data across Google Cloud Platform services
-            compute: View and manage your Google Compute Engine resources
   schemas:
     Instance:
       type: object
@@ -309,3 +327,13 @@ components:
           type: string
         targetLink:
           type: string
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/v2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            cloud-platform: View and manage your data across Google Cloud Platform services
+            compute: View and manage your Google Compute Engine resources
