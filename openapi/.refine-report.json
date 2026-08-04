@@ -1,0 +1,14 @@
+{
+  "provider": "google-cloud-platform-gcp",
+  "sources": [
+    "google-cloud-platform-gcp-projects-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-platform-gcp-projects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
