@@ -27,6 +27,10 @@ apis:
   humanUrl: https://cloud.google.com/vertex-ai
   baseUrl: https://aiplatform.googleapis.com/v1
   tags:
+  - Artificial Intelligence
+  - Machine-Learning
+  - MLOps
+  tags_raw:
   - AI
   - Machine Learning
   - MLOps
@@ -41,6 +45,8 @@ apis:
   name: Google Cloud Platform Projects API
   description: The Projects API from Google Cloud Platform — 6 operation(s) for projects.
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -138,6 +144,14 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 tags:
+  - Cloud Computing
+  - Data Analytics
+  - Infrastructure-as-a-Service
+  - Machine-Learning
+  - Platform-as-a-Service
+  - Software-as-a-Service
+  - Serverless
+tags_raw:
   - Cloud Computing
   - Data Analytics
   - IaaS
